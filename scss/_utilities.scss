@@ -1,0 +1,52 @@
+// Buttons {
+%btn-shared {
+    display: inline-block;
+    padding: .8rem 2rem;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    border: none;
+    cursor: pointer;
+    border-radius: 35px;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    -ms-border-radius: 35px;
+    -o-border-radius: 35px;
+    font-size: 18px;
+}
+
+.btn {
+    &-success {
+        @extend %btn-shared;
+        color: $light-color;
+        background-color: $main-color;
+
+        &:hover {
+            background-color: #135f40;
+        }
+
+        &:active {
+            background-color: #0b3d29;
+        }
+    }
+
+    &-danger {
+        @extend %btn-shared;
+        color: $light-color;
+        background-color: $danger-color;
+
+        &:hover {
+            background-color: #a34328;
+        }
+
+        &:active {
+            background-color: #6b2a18;
+        }
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
