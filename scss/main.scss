@@ -271,9 +271,7 @@ img {
 
             span.switcher {
                 position: relative;
-                $black: #1E1E1E;
-                $grey: #CCCCCC;
-                $white: #FFFFFF;
+
                 width: 300px;
                 height: 55px;
                 border-radius: 25px;
@@ -299,7 +297,7 @@ img {
                         top: 50%;
                         transform: translateY(-50%);
 
-                        color: $white;
+                        color: #fff;
                     }
 
                     &:before {
@@ -330,7 +328,7 @@ img {
                             background-color: #fff;
 
                             &:before {
-                                color: $white;
+                                color: #fff;
                                 transition: color .5s .2s;
                             }
 
@@ -462,6 +460,10 @@ img {
             }
         }
 
+        .toggler:checked+.hamburger {
+            background-color: transparent;
+        }
+
         .toggler:checked+.hamburger>div {
             transform: rotate(135deg);
             -webkit-transform: rotate(135deg);
@@ -496,10 +498,64 @@ img {
 
         .page-title {
             border-radius: none;
+            padding: 1rem 2rem;
+            height: 40px;
+
+            h1 {
+                font-weight: 300;
+                font-size: 36px;
+            }
 
             .date-wrapper {
                 display: none;
             }
+        }
+
+        .page-form {
+            justify-self: center;
+
+            .form-wrapper {
+                padding: 0;
+            }
+
+            .form-group {
+                padding: 0;
+                margin: 0;
+
+                span.switcher {
+                    width: 250px;
+
+                    input {
+                        font-size: 14px;
+                        width: 300px;
+                    }
+
+                    &.switcher-1 {
+                        input {
+                            &:checked {
+
+                                &+label {
+                                    left: 10px;
+                                    right: 120px;
+                                }
+                            }
+
+                            &:not(:checked) {
+
+                                &+label {
+                                    left: 150px;
+                                    right: -40px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .page-controll {
+            bottom: 10px;
         }
     }
 }
